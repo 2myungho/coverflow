@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mainPage</title>
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script>
+        window.onload = function(){
+            $('#box').hover(function(){
+                $('img').attr('src','image/mainPage-hover.png')
+            },function(){
+                $('img').attr('src','image/mainPage.png')
+            })
+        }
+    </script>
+    <style>
+        html,
+        body{height:100%;}
+        img{
+            position:absolute;
+            left:0;
+            top:0;
+            bottom:0;
+            right:0;
+        }
+        #box{
+            position:absolute;
+            top:372px;
+            left:395px;
+            /*border:1px solid #000;*/
+            width:194px;
+            height:325px;
+        }
+    </style>
+</head>
+<body>
+    <img src="image/mainPage.png" alt="mainPage">
+    <a id="box" href="subPage.html"></a>
+</body>
+</html>
