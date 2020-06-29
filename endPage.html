@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
     <title>endPage</title>
 
     <style>
@@ -23,14 +24,146 @@
         list-style: none;
       }
       #imgBox {
-          overflow: hidden;
+        width: 1852px;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #imgBox li {
+        float: left;
+        width: 926px;
+        height: 515px;
+        position: relative;
+      }
+      .imgBoxs1 {
+        cursor: pointer;
+      }
+      #imgBox li img {
+        width: 100%;
+      }
+      #text {
+        width: 508px;
+        height: 515px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 50px 0;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+      }
+      .texts {
+        display: block;
+        padding-left: 10px;
+      }
+      .texts1 {
+        width: 240px;
+        height: 34px;
+        margin-top: 28px;
+        font-size: 24px;
+      }
+      .texts2 {
+        width: 338px;
+        height: 34px;
+        margin-top: 30px;
+        font-size: 24px;
+      }
+      .texts3 {
+        width: 250px;
+        height: 24px;
+        margin-top: 58px;
+        font-size: 18px;
+      }
+      .texts4 {
+        width: 250px;
+        height: 24px;
+        margin-top: 8px;
+        font-size: 18px;
+      }
+      .texts5 {
+        width: 250px;
+        height: 24px;
+        margin-top: 8px;
+        font-size: 18px;
+      }
+      .texts6 {
+        width: 415px;
+        height: 24px;
+        margin-top: 5px;
+        margin-left: 38px;
+        font-size: 18px;
+      }
+      .texts7 {
+        width: 415px;
+        height: 24px;
+        margin-top: 10px;
+        margin-left: 38px;
+        font-size: 18px;
+      }
+
+      .imgBoxs:nth-child(1) {
+        z-index: 2;
+      }
+      .imgBoxs:nth-child(2) {
+        z-index: 1;
       }
     </style>
   </head>
   <body>
     <ul id="imgBox">
-      <li><img src="image/1.png" /></li>
-      <li><img src="image/1-2.png" /></li>
+      <li class="imgBoxs imgBoxs1"><img src="image/1.png" /></li>
+      <li class="imgBoxs imgBoxs2">
+        <img src="image/1-2.png" />
+        <form id="text">
+          <input type="text" class="texts texts1" placeholder="ZAY COKE" />
+          <input type="text" class="texts texts2" placeholder="LEE JAE YEON" />
+          <input
+            type="text"
+            class="texts texts3"
+            placeholder="ART TOY DESIGNER"
+          />
+          <input type="text" class="texts texts4" placeholder="ILLUSTRATOR" />
+          <input
+            type="text"
+            class="texts texts5"
+            placeholder="+82 10.2093.2597"
+          />
+          <input
+            type="text"
+            class="texts texts6"
+            placeholder="jeje_92@naver.com"
+          />
+          <input
+            type="text"
+            class="texts texts7"
+            placeholder="www.instagram.com / zay_coke"
+          />
+        </form>
+      </li>
     </ul>
+
+    <script>
+      window.onload = function () {
+          $(".imgBoxs1").click(function () {
+            $("#imgBox").width("960px");
+            $(".imgBoxs1").css({ position: "fixed" });
+            setInterval(function(){
+                $(".imgBoxs:first-child").animate({ opacity: "0" },1000,
+                function () {
+                    $(this).appendTo("#imgBox");
+                    $(this).css({ opacity: "1" });
+                }
+            );  
+            },3000);
+          });
+      };
+    </script>
   </body>
 </html>
+
+
+
